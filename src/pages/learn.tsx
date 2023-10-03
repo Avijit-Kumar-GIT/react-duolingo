@@ -167,9 +167,9 @@ const getTileTooltipLeftOffset = ({
     unitNumber % 2 === 1
       ? tileTooltipLeftOffsets
       : [
-          ...tileTooltipLeftOffsets.slice(4),
-          ...tileTooltipLeftOffsets.slice(0, 4),
-        ];
+        ...tileTooltipLeftOffsets.slice(4),
+        ...tileTooltipLeftOffsets.slice(0, 4),
+      ];
 
   return offsets[index % offsets.length] ?? tileTooltipLeftOffsets[0];
 };
@@ -245,8 +245,8 @@ const TileTooltip = ({
           status === "ACTIVE"
             ? activeBackgroundColor
             : status === "LOCKED"
-            ? "border-2 border-gray-200 bg-gray-100"
-            : "bg-yellow-400",
+              ? "border-2 border-gray-200 bg-gray-100"
+              : "bg-yellow-400",
           index === selectedTile ? "top-4 scale-100" : "-top-14 scale-0",
         ].join(" ")}
         style={{ left: "calc(50% - 150px)" }}
@@ -257,8 +257,8 @@ const TileTooltip = ({
             status === "ACTIVE"
               ? activeBackgroundColor
               : status === "LOCKED"
-              ? "border-l-2 border-t-2 border-gray-200 bg-gray-100"
-              : "bg-yellow-400",
+                ? "border-l-2 border-t-2 border-gray-200 bg-gray-100"
+                : "bg-yellow-400",
           ].join(" ")}
           style={{
             left: getTileTooltipLeftOffset({ index, unitNumber, tilesLength }),
@@ -270,8 +270,8 @@ const TileTooltip = ({
             status === "ACTIVE"
               ? "text-white"
               : status === "LOCKED"
-              ? "text-gray-400"
-              : "text-yellow-600",
+                ? "text-gray-400"
+                : "text-yellow-600",
           ].join(" ")}
         >
           {description}
@@ -630,7 +630,7 @@ const UnitHeader = ({
           <p className="text-lg">{description}</p>
         </div>
         <Link
-          href={`https://duolingo.com/guidebook/${language.code}/${unitNumber}`}
+          href={`/guidebooks/unit${unitNumber}`}
           className={[
             "flex items-center gap-3 rounded-2xl border-2 border-b-4 p-3 transition hover:text-gray-100",
             borderColor,
